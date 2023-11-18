@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="22G120" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Channel" representedClassName="Channel" versionHashModifier="indexes" syncable="YES" codeGenerationType="class">
+        <attribute name="backgroundImage" optional="YES" attributeType="String"/>
+        <attribute name="latestVideosLoad" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="loadedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="subscribersCount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uid" attributeType="String"/>
+        <relationship name="playlists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Playlist" inverseName="channel" inverseEntity="Playlist"/>
+        <relationship name="videos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Video" inverseName="channel" inverseEntity="Video"/>
+        <fetchIndex name="byUid">
+            <fetchIndexElement property="uid" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="ContainedItem" representedClassName="ContainedItem" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="Transformable" valueTransformerName="Database.CodableTransformer" customClassName="[String:Any]"/>
+        <attribute name="links" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <fetchIndex name="byUid">
+            <fetchIndexElement property="uid" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="ContainerLink" representedClassName="ContainerLink" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <fetchIndex name="byUid">
+            <fetchIndexElement property="uid" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byDate">
+            <fetchIndexElement property="date" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="FavoriteChannel" representedClassName="FavoriteChannel" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <entity name="FavoritePlaylist" representedClassName="FavoritePlaylist" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <entity name="FavoriteVideo" representedClassName="FavoriteVideo" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <entity name="HistoryVideo" representedClassName="HistoryVideo" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class">
+        <attribute name="position" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="watched" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="KidsSpaceChannel" representedClassName="KidsSpaceChannel" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <entity name="KidsSpacePlaylist" representedClassName="KidsSpacePlaylist" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <entity name="KidsSpaceVideo" representedClassName="KidsSpaceVideo" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <entity name="Playlist" representedClassName="Playlist" syncable="YES" codeGenerationType="class">
+        <attribute name="count" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="published" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uid" attributeType="String" defaultValueString="0"/>
+        <relationship name="channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Channel" inverseName="playlists" inverseEntity="Channel"/>
+        <relationship name="videos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Video" inverseName="playlists" inverseEntity="Video"/>
+        <fetchIndex name="byUid">
+            <fetchIndexElement property="uid" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Video" representedClassName="Video" syncable="YES" codeGenerationType="class">
+        <attribute name="durationInterval" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="live" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="published" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uid" attributeType="String" defaultValueString="0"/>
+        <attribute name="videoDescription" optional="YES" attributeType="String"/>
+        <attribute name="views" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Channel" inverseName="videos" inverseEntity="Channel"/>
+        <relationship name="playlists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Playlist" inverseName="videos" inverseEntity="Playlist"/>
+        <fetchIndex name="byUid">
+            <fetchIndexElement property="uid" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="WatchLaterVideo" representedClassName="WatchLaterVideo" parentEntity="ContainerLink" syncable="YES" codeGenerationType="class"/>
+    <configuration name="Cache">
+        <memberEntity name="Channel"/>
+        <memberEntity name="Playlist"/>
+        <memberEntity name="Video"/>
+    </configuration>
+    <configuration name="Cloud" usedWithCloudKit="YES">
+        <memberEntity name="ContainedItem"/>
+        <memberEntity name="ContainerLink"/>
+        <memberEntity name="KidsSpaceVideo"/>
+        <memberEntity name="KidsSpacePlaylist"/>
+        <memberEntity name="KidsSpaceChannel"/>
+        <memberEntity name="HistoryVideo"/>
+        <memberEntity name="FavoriteVideo"/>
+        <memberEntity name="FavoritePlaylist"/>
+        <memberEntity name="FavoriteChannel"/>
+        <memberEntity name="WatchLaterVideo"/>
+    </configuration>
+</model>

@@ -1,0 +1,88 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CommonUtils",
+        "repositoryURL": "https://github.com/ivkuznetsov/CommonUtils.git",
+        "state": {
+          "branch": null,
+          "revision": "23e91b377959f47a9ebc14679ae574e41e031e23",
+          "version": "1.2.6"
+        }
+      },
+      {
+        "package": "Coordinators",
+        "repositoryURL": "https://github.com/ivkuznetsov/Coordinators",
+        "state": {
+          "branch": null,
+          "revision": "cd2d1f82fd01aa0647f40b2571f742b665d1d2af",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "Database",
+        "repositoryURL": "https://github.com/ivkuznetsov/Database.git",
+        "state": {
+          "branch": null,
+          "revision": "bfde3684c76c5a10a5572f157fe3596cfc87466c",
+          "version": "1.3.1"
+        }
+      },
+      {
+        "package": "DependencyContainer",
+        "repositoryURL": "https://github.com/ivkuznetsov/DependencyContainer",
+        "state": {
+          "branch": null,
+          "revision": "2bdec9fc5ea8553307ecdd4909e8f34ffd3ded27",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "GridView",
+        "repositoryURL": "https://github.com/ivkuznetsov/GridView",
+        "state": {
+          "branch": null,
+          "revision": "7ae868e74e41bb773c2971fb8967f5bbfcc430b7",
+          "version": "1.1.5"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "277f1ab2c6664b19b4a412e32b094b201e2d5757",
+          "version": "7.10.0"
+        }
+      },
+      {
+        "package": "Loader",
+        "repositoryURL": "https://github.com/ivkuznetsov/Loader",
+        "state": {
+          "branch": null,
+          "revision": "8187e72930d4b07af8bc60fda6bd61510024dfdb",
+          "version": "1.0.9"
+        }
+      },
+      {
+        "package": "NetworkKit",
+        "repositoryURL": "https://github.com/ivkuznetsov/Network.git",
+        "state": {
+          "branch": null,
+          "revision": "a8f34c6d7e726de8b4e97b031366db1c7078b381",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "SwiftUIComponents",
+        "repositoryURL": "https://github.com/ivkuznetsov/SwiftUIComponents.git",
+        "state": {
+          "branch": null,
+          "revision": "56ca4cdcc55069b7619b09fc2ee0bca302fb7163",
+          "version": "1.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
