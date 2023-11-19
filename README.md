@@ -7,6 +7,7 @@ iOS/macOS (mac Catalyst) client for [Invidious](https://invidious.io)
 • Picture-in-Picture<br>
 • Airplay<br>
 • Continue playback from the last viewed position in any video<br>
+• CloudKit synchronization<br>
 
 Specify URL to Invidious instance in IvoryCore/DIContainer.swift alongside with authKey for accessing to your server.
 You can use one of the public instances or host your own.
