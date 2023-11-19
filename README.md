@@ -1,12 +1,12 @@
 # ivory-ios
 iOS/macOS (mac Catalyst) client for [Invidious](https://invidious.io)
 
-• No Ads
-• Universal app with split view support
-• Background audio playback
-• Picture-in-Picture
-• Airplay
-• Continue playback from the last viewed position in any video
+• No Ads<br>
+• Universal app with split view support<br>
+• Background audio playback<br>
+• Picture-in-Picture<br>
+• Airplay<br>
+• Continue playback from the last viewed position in any video<br>
 
 Specify URL to Invidious instance in IvoryCore/DIContainer.swift alongside with authKey for accessing to your server.
 You can use one of the public instances or host your own.
