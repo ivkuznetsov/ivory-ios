@@ -1,5 +1,12 @@
 # ivory-ios
-iOS client for [Invidious](https://invidious.io)
+iOS/macOS (mac Catalyst) client for [Invidious](https://invidious.io)
+
+• No Ads
+• Universal app with split view support
+• Background audio playback
+• Picture-in-Picture
+• Airplay
+• Continue playback from the last viewed position in any video
 
 Specify URL to Invidious instance in IvoryCore/DIContainer.swift alongside with authKey for accessing to your server.
 You can use one of the public instances or host your own.
@@ -13,6 +20,20 @@ extension String {
     static let iCloudIdentifier = "icloud.identifier"
 }
 ```
+
+## Screenshots
+
+### iOS
+<div>
+<img src="Screenshots/ios-1.jpg" style="width:200px;"/>
+<img src="Screenshots/ios-2.jpg" style="width:200px;"/>
+</div>
+
+### iPadOS
+<img src="Screenshots/ipados-1.jpg" style="width:600px;"/>
+
+### macOS
+<img src="Screenshots/macos-1.jpg" style="width:600px;"/>
 
 ## Donation
 
